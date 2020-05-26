@@ -11,14 +11,17 @@ import { CargaImagenesService } from './services/carga-imagenes.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import {  environment } from '../environments/environment';
+import { environment } from '../environments/environment';
 import { from } from 'rxjs';
+
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FotosComponent,
-    CargaComponent
+    CargaComponent,
+    NgDropFilesDirective
   ],
   imports: [
     BrowserModule,

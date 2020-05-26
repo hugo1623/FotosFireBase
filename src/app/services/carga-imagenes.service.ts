@@ -14,9 +14,6 @@ export class CargaImagenesService {
     console.log( imagenes);
   }
 
-
-
-
   private guardarImage(imagen: {nombre: string, url: string}){
 
     this.db.collection(`/${this.CARPETA_IMAGENES}`)

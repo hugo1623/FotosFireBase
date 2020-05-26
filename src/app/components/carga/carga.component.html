@@ -3,7 +3,7 @@
     <div class="col-md-4">
         <h3>Seleccione Archivos</h3>
 
-        <div>
+        <div appNgDropFiles (mouseSobre)="pruebaSobreElemento = $event" [ngClass]="{'file-over': estaSobreElemento }" class="well drop-zone ">
             <h4>Deje caer aquí los archivos</h4>
             <img src="assets/drop-images.png">
         </div>
@@ -12,11 +12,18 @@
 
     <div class="col-md-8">
         <h4> Cargar Archivo </h4>
-        <button (click)="cargarImagen()" class="btn btn-success">Cargar a Fire Base </button>
+        <button (click)="cargarImagenes()" [disabled]="archivos.length === 0" class="btn btn-success">Cargar a Fire Base </button>
         <button class="btn btn-danger">Limpiar </button>
 
         <table class="table">
             <thead class="thead-dark">
+                <tr>
+                    <th>Nombre del Archivo</th>
+                    <th>Tamaño</th>
+                    <th>Progreso</th>
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>SS</td>
                     <td>12M</td>
@@ -27,10 +34,8 @@
 
                     </td>
 
-
                 </tr>
-
-            </thead>
+            </tbody>
 
         </table>
 

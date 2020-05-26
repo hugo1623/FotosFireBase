@@ -10,15 +10,22 @@ import { CargaImagenesService } from '../../services/carga-imagenes.service'
 })
 export class CargaComponent implements OnInit {
 
-  archivo: FileItem[]=[];
+  estaSobreElemento = false;
+
+  archivos: FileItem[]=[];
 
   constructor(public _cargaImagenes: CargaImagenesService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  cargarImagen(){
-    this._cargaImagenes.cargarImagenesFirebase(this.archivo);
+  cargarImagenes(){
+    this._cargaImagenes.cargarImagenesFirebase(this.archivos);
+
+  }
+  pruebaSobreElemento( event ){
+    console.log(event);
+
 
   }
 }
